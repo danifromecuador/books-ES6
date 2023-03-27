@@ -1,12 +1,31 @@
-import { newTitle, newAuthor, addButton } from './html-const-variables.js';
+import { newTitle, newAuthor, alertMessage } from './html-const-variables.js';
 
-const arr = [];
+const array = JSON.parse(localStorage.getItem('booksListArray')) || [];
+
 const add = () => {
-  addButton.addEventListener('click', () => {
-    arr.push({ title: newTitle.value, author: newAuthor.value });
-    localStorage.setItem('booksListArray', JSON.stringify(arr));
-    // console.log(arr);
+  let repeatedBook = false;
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i].title === newTitle.value && array[i].author === newAuthor.value) {
+      alertMessage.innerHTML = 'This book is already added!';
+      repeatedBook = true;
+    }
+  }
+
+  newTitle.addEventListener('click', () => {
+    newTitle.value = '';
   });
+
+  newAuthor.addEventListener('click', () => {
+    newAuthor.value = '';
+  });
+
+  if (newTitle.value !== '' && newTitle.value !== '' && repeatedBook === false) {
+    array.push({ title: newTitle.value, author: newAuthor.value });
+    localStorage.setItem('booksListArray', JSON.stringify(array));
+    newTitle.value = '';
+    newAuthor.value = '';
+    alertMessage.innerHTML = '';
+  }
 };
 
 export default add;
