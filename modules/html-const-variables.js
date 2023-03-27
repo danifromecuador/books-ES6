@@ -10,4 +10,7 @@ const listSection = document.querySelector('.list');
 const addANewSection = document.querySelector('.add-a-new-book');
 const contactSection = document.querySelector('.contact');
 
-export {addedBooks, addButton, newTitle, newAuthor, alertMessage, navList, navAdd, navContact, listSection, addANewSection, contactSection};
+export {
+  addedBooks, addButton, newTitle, newAuthor, alertMessage, navList, navAdd, navContact,
+  listSection, addANewSection, contactSection,
+};

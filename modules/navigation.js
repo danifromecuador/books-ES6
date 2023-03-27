@@ -1,5 +1,6 @@
-import { navList, navAdd, navContact, listSection, addANewSection, contactSection } from '/modules/html-const-variables.js';
-
+import {
+  navList, navAdd, navContact, listSection, addANewSection, contactSection,
+} from './html-const-variables.js';
 
 const goToListSection = () => {
   navList.addEventListener('click', () => {
@@ -7,7 +8,7 @@ const goToListSection = () => {
     addANewSection.classList.add('hide');
     contactSection.classList.add('hide');
   });
-}
+};
 
 const goToAddSection = () => {
   navAdd.addEventListener('click', () => {
@@ -15,7 +16,7 @@ const goToAddSection = () => {
     addANewSection.classList.remove('hide');
     contactSection.classList.add('hide');
   });
-}
+};
 
 const goToContactSection = () => {
   navContact.addEventListener('click', () => {
@@ -23,8 +24,6 @@ const goToContactSection = () => {
     addANewSection.classList.add('hide');
     contactSection.classList.remove('hide');
   });
-}
+};
 
-
-
-export {goToListSection, goToAddSection, goToContactSection};
+export { goToListSection, goToAddSection, goToContactSection };

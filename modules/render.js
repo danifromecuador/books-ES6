@@ -1,13 +1,12 @@
-import { addedBooks, addButton } from "/modules/html-const-variables.js";
+import { addedBooks, addButton } from './html-const-variables.js';
 
-let html = `hola pendejo
+const html = `hola pendejo
 `;
 
-
 const showList = () => {
-    addButton.addEventListener("click", () => {
-        addedBooks.innerHTML = html;
-    });
+  addButton.addEventListener('click', () => {
+    addedBooks.innerHTML = html;
+  });
 };
 
-export { showList };
+export default showList;
