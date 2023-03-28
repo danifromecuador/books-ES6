@@ -1,9 +1,9 @@
 import { newTitle, newAuthor, alertMessage } from './html-const-variables.js';
 
-const array = JSON.parse(localStorage.getItem('booksListArray')) || [];
-
 const add = () => {
+  const array = JSON.parse(localStorage.getItem('booksListArray')) || [];
   let repeatedBook = false;
+
   for (let i = 0; i < array.length; i += 1) {
     if (array[i].title === newTitle.value && array[i].author === newAuthor.value) {
       alertMessage.innerHTML = 'This book is already added!';
@@ -13,10 +13,12 @@ const add = () => {
 
   newTitle.addEventListener('click', () => {
     newTitle.value = '';
+    alertMessage.innerHTML = '';
   });
 
   newAuthor.addEventListener('click', () => {
     newAuthor.value = '';
+    alertMessage.innerHTML = '';
   });
 
   if (newTitle.value !== '' && newTitle.value !== '' && repeatedBook === false) {
