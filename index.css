@@ -21,6 +21,11 @@ h2 {
   padding: 1.5rem 0;
 }
 
+#current-time {
+  text-align: right;
+  margin-right: 1rem;
+}
+
 .nav-bar,
 footer {
   border: 1px solid #ffc145;
